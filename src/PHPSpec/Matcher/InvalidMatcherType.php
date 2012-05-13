@@ -19,9 +19,7 @@
  *                                    Marcello Duarte
  * @license   http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public Licence Version 3
  */
-namespace PHPSpec\Specification\Result;
-
-use \PHPSpec\Specification\Result;
+namespace PHPSpec\Matcher;
 
 /**
  * @category   PHPSpec
@@ -31,42 +29,7 @@ use \PHPSpec\Specification\Result;
  *                                     Marcello Duarte
  * @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public Licence Version 3
  */
-class Exception extends Result
+class InvalidMatcherType extends InvalidMatcher
 {
-    
-    /**
-     * The exception class
-     *
-     * @var string
-     */
-    protected $_exceptionClass;
-    
-    /**
-     * The exception object
-     *
-     * @var \Exception
-     */
-    protected $_exceptionObject;
-    
-    /**
-     * \PHPSpec\Specification\Resutl\Exception is created with an exception
-     * 
-     * @param \Exception $exception
-     */
-    public function __construct(\Exception $exception)
-    {
-        $this->_exceptionClass = get_class($exception);
-        $this->_exceptionObject = $exception;
-        parent::__construct($exception->getMessage());
-    }
-    
-    /**
-     * Gets the exception class
-     * 
-     * @return string
-     */
-    public function getExceptionClass()
-    {
-        return $this->_exceptionClass;
-    }
+
 }
